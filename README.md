@@ -28,47 +28,51 @@ Icons can be used in different scenarios when making the frontend of an applicat
 
 ## Code explanation
 
-import 'package:flutter/material.dart'; <- Importing material fom flutter
+import 'package:flutter/material.dart'; <- Importing material fom flutter <br>
 
-void main() {
-  runApp(const MyApp()); <- Entry point for the application
-}
+void main() {<br>
+  runApp(const MyApp()); <- Entry point for the application<br>
+}<br>
 
-class MyApp extends StatelessWidget { <- The first widget of the app called MyApp
-  const MyApp({super.key});
+class MyApp extends StatelessWidget { <- The first widget of the app called MyApp<br>
+  const MyApp({super.key});<br>
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(    
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>  
+      title: 'Flutter Demo',<br>
+      theme: ThemeData(<br>
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),<br>
+      ),<br>
+      home: MyHomePage(), <- Calling the MyHomePage widget that contains the icons.<br>
+    );<br>
+  }<br>
+}<br>
+
+class MyHomePage extends StatelessWidget { <- MyHomePage widget that contains all the icons.<br>
+  const MyHomePage({super.key});<br>
+
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold( <- Scaffold widget which helps in layouts of Flutter applications.<br>
+      appBar: AppBar(<br>
+        title: Text('Icons bro!'), <br>
+        backgroundColor: Colors.green,<br>
+        centerTitle: true,<br>
       ),
-      home: MyHomePage(), <- Calling the MyHomePage widget that contains the icons.
-    );
-  }
-}
+      body: Row( <- Displaying the icons in a row<br>
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,<br>
+        children: <Widget>[<br>
+          Icon(Icons.hail, color: Colors.blue, size: 75), <- Displaying all the icons.<br>
+          Icon(Icons.favorite, color: Colors.green, size: 75),<br>
+          Icon(Icons.thumb_down, color: Colors.yellow, size: 75),<br>
+          ]<br>
+        ),<br>
+    );<br>
+  }<br>
+}<br>
 
-class MyHomePage extends StatelessWidget { <- MyHomePage widget that contains all the icons.
-  const MyHomePage({super.key});
+## Authors
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold( <- Scaffold widget which helps in layouts of Flutter applications.
-      appBar: AppBar(
-        title: Text('Icons bro!'), 
-        backgroundColor: Colors.green,
-        centerTitle: true,
-      ),
-      body: Row( <- Displaying the icons in a row
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Icon(Icons.hail, color: Colors.blue, size: 75), <- Displaying all the icons.
-          Icon(Icons.favorite, color: Colors.green, size: 75),
-          Icon(Icons.thumb_down, color: Colors.yellow, size: 75),
-          ]
-        ),
-    );
-  }
-}
+Credo Desparvis Gutabarwa
 
